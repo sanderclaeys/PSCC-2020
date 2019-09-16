@@ -106,9 +106,11 @@ uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 
 [[DistributionTestCases]]
 deps = ["Compat", "Ipopt", "JSON", "JuMP", "LightGraphs", "MathOptInterface", "Memento", "Mosek", "MosekTools", "OpenDSSDirect", "Plots", "PowerModels", "PowerModelsDistribution"]
-path = "/Users/sclaeys/code/DistributionTestCases.jl/"
+git-tree-sha1 = "e3e7072fa60e857ac85596d398a829dffd62ec6d"
+repo-rev = "master"
+repo-url = "https://github.com/sanderclaeys/DistributionTestCases.jl"
 uuid = "ee9588fa-d3ac-11e9-2cb3-b3040bb0eda3"
-version = "0.2.0"
+version = "0.2.1"
 
 [[DocStringExtensions]]
 deps = ["LibGit2", "Markdown", "Pkg", "Test"]
