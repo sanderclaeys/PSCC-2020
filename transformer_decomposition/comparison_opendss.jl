@@ -11,11 +11,11 @@ ipopt_solver = JuMP.with_optimizer(Ipopt.Optimizer, tol=1E-10)
 cases = ["IEEE13", "IEEE34", "IEEE123", "LVTestCase t=500", "LVTestCase t=1000"]
 # path for each case
 paths = Dict(
-        "IEEE13"            => DTC.CASE_PATH["IEEE13"],
-        "IEEE34"            => DTC.CASE_PATH["IEEE34"],
-        "IEEE123"           => DTC.CASE_PATH["IEEE123"],
-        "LVTestCase t=500"  => DTC.CASE_PATH["LVTestCase"][500],
-        "LVTestCase t=1000" => DTC.CASE_PATH["LVTestCase"][1000],
+        "IEEE13"            => "data/ieee13_pmd_ypq.dss",
+        "IEEE34"            => "data/ieee34_pmd_ypq.dss",
+        "IEEE123"            => "data/ieee123_pmd_ypq.dss",
+        "LVTestCase t=500"  => "data/lvtestcase_pmd_t500_ypq.dss",
+        "LVTestCase t=1000" => "data/lvtestcase_pmd_t1000_ypq.dss",
 )
 
 # indicate for each case which buses should be compared line-to-line instead of line-to-neutral
@@ -27,6 +27,7 @@ results = Dict()
 for case in cases
         path = paths[case]
         results[case] = Dict()
+
         sol_dss = DTC.get_soldss_opendssdirect(path, tolerance=1E-6)
         data_pmd = PMD.parse_file(path)
 

@@ -91,7 +91,7 @@ for case in cases
                 sol_pmd = PMs.optimize_model!(pm, ipopt_solver)
 
                 results_exact = Dict("objective"=>NaN, "termination_status"=>sol_pmd["termination_status"])
-                results[case][nlp_label[i]] = results_exact
+                results[case][exact_label[i]] = results_exact
                 if sol_pmd["termination_status"]==PMD.LOCALLY_SOLVED
                         obj_relax = get_obj(pm)
                         results_exact["objective"] = get_obj(pm)
